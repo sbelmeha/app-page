@@ -7,7 +7,7 @@ include_in_header: false
 **Last updated**  
 May 22 2020
 
-**Privacy Policy**
+# Privacy Policy
 
 rflx.app built the Reflex app as a Freemium app. This SERVICE is provided by rflx.app at no cost and is intended for use as is.
 
