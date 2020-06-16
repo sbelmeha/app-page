@@ -21,6 +21,8 @@ The terms used in this Privacy Policy have the same meanings as in our Terms and
 
 For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained by us and used as described in this privacy policy.
 
+The app does use TrueDepth API provided by Apple to create unique AR effects, usind this API the app can detect people's silhouette on the incoming image from camera and apply effects to it or to background in real time. The collected data from TrueDepth API is not sharing with any third parties and is never stored locally or remotely. Camera and microphone access is required to record video with sound with the app. 
+
 The app does use third party services that may collect information used to identify you.
 
 Link to privacy policy of third party service providers used by the app
@@ -30,7 +32,7 @@ Link to privacy policy of third party service providers used by the app
 
 **Log Data**
 
-we want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.
+We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.
 
 **Cookies**
 
@@ -40,7 +42,7 @@ This Service does not use these “cookies” explicitly. However, the app may u
 
 **Service Providers**
 
-we may employ third-party companies and individuals due to the following reasons:
+We may employ third-party companies and individuals due to the following reasons:
 
 *   To facilitate our Service;
 *   To provide the Service on our behalf;
@@ -51,7 +53,7 @@ we want to inform users of this Service that these third parties have access to 
 
 **Security**
 
-we value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
+We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
 
 **Links to Other Sites**
 
