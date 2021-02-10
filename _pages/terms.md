@@ -30,6 +30,10 @@ With respect to rflx.app’s responsibility for your use of the app, when you’
 
 At some point, we may wish to update the app. The app is currently available on iOS – the requirements for system(and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. rflx.app does not promise that it will always update the app so that it is relevant to you and/or works with the iOS version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.
 
+**Restrictions**
+
+a) Disassemble, decompile, reverse engineer or use any other means to attempt to discover any source code of any portion of our software, or the underlying ideas, algorithms or trade secrets therein.
+
 **Payment processing**
 
 Apple will charge your selected payment method (such as your credit card, debit card, gift card/code, or other method available in your Home Country) for your paid Subscription, including any applicable taxes.
