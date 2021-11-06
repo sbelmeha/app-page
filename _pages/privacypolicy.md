@@ -21,7 +21,8 @@ The terms used in this Privacy Policy have the same meanings as in our Terms and
 
 For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained by us and used as described in this privacy policy.
 
-*TrueDepth API*
+**TrueDepth API**
+
 The app does use TrueDepth API provided by Apple to create unique AR effects, using this API the app can detect people's silhouette on the incoming image from camera and apply effects to it or background in real time. The collected data from TrueDepth API is not sharing with any third parties and is never stored locally or remotely. Camera and microphone access is required to record video with sound with the app.
 
 The app does use third party services that may collect information used to identify you.
