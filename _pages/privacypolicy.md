@@ -9,13 +9,13 @@ June 16 2020
 
 # Privacy Policy
 
-rflx.app built the Reflex app as a Freemium app. This SERVICE is provided by rflx.app at no cost and is intended for use as is.
+rflx.app built the Reflex app as a Freemium app and Perfect Loop Maker as a free app. This SERVICE is provided by rflx.app at no cost and is intended for use as is.
 
 This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
 
 If you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is used for providing and improving the Service. we will not use or share your information with anyone except as described in this Privacy Policy.
 
-The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at Reflex unless otherwise defined in this Privacy Policy.
+The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at rflx.app unless otherwise defined in this Privacy Policy.
 
 **Information Collection and Use**
 
