@@ -9,7 +9,7 @@ June 16 2020
 
 # Privacy Policy
 
-rflx.app built the Perfect Loop Maker app as a free app. This SERVICE is provided by rflx.app at no cost and is intended for use as is.
+rflx.app built the Expense app as a free app. This SERVICE is provided by rflx.app at no cost and is intended for use as is.
 
 This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
 
@@ -61,7 +61,7 @@ This Service may contain links to other sites. If you click on a third-party lin
 
 we may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. we will notify you of any changes by posting the new Privacy Policy on this page.
 
-This policy is effective as of 2020-05-22
+This policy is effective as of 2023-02-21
 
 **Contact Us**
 
