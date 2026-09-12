@@ -1,0 +1,27 @@
+---
+layout: reflex
+title: TestFlight waitlist
+description: Join the waitlist to hear when Reflex 3 is ready for TestFlight.
+body_class: signup-page
+---
+<main id="main" class="signup">
+  <h1 class="particle-wordmark" aria-label="Reflex 3">
+    <span class="particle-fallback" aria-hidden="true">reflex</span>
+    <sup class="wordmark-version" aria-hidden="true">3</sup>
+    <canvas aria-hidden="true"></canvas>
+  </h1>
+  <p id="signup-description" class="intro">Get notified when the TestFlight beta is ready.</p>
+  <form action="https://formsubmit.co/rflx.app@gmail.com" method="POST" aria-label="Join the TestFlight waitlist">
+    <input type="hidden" name="_subject" value="Reflex 3 — TestFlight waitlist signup">
+    <input type="hidden" name="request" value="Please add this email address to the Reflex 3 waitlist and notify me when the TestFlight beta is ready.">
+    <input type="hidden" name="_next" value="https://rflx.app/thanks/">
+    <input type="hidden" name="_url" value="https://rflx.app/">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label class="visually-hidden" for="email">Email address</label>
+    <input id="email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" maxlength="254" placeholder="Email address" aria-describedby="signup-description signup-privacy" required>
+    <button type="submit">Join the waitlist</button>
+    <p id="signup-privacy" class="form-note">Beta updates only. iOS 26+.</p>
+  </form>
+</main>
+<script type="module" src="/assets/particle-wordmark.mjs"></script>
