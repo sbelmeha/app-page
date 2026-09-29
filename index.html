@@ -1,27 +1,55 @@
 ---
-layout: reflex
-title: TestFlight waitlist
-description: Join the waitlist to hear when Reflex 3 is ready for TestFlight.
-body_class: signup-page
+layout: null
 ---
-<main id="main" class="signup">
-  <h1 class="particle-wordmark" aria-label="Reflex 3">
-    <span class="particle-fallback" aria-hidden="true">reflex</span>
-    <sup class="wordmark-version" aria-hidden="true">3</sup>
-    <canvas aria-hidden="true"></canvas>
-  </h1>
-  <p id="signup-description" class="intro">Get notified when the TestFlight beta is ready.</p>
-  <form action="https://formsubmit.co/rflx.app@gmail.com" method="POST" aria-label="Join the TestFlight waitlist">
-    <input type="hidden" name="_subject" value="Reflex 3 — TestFlight waitlist signup">
-    <input type="hidden" name="request" value="Please add this email address to the Reflex 3 waitlist and notify me when the TestFlight beta is ready.">
-    <input type="hidden" name="_next" value="https://rflx.app/thanks/">
-    <input type="hidden" name="_url" value="https://rflx.app/">
-    <input type="hidden" name="_template" value="table">
-    <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <label class="visually-hidden" for="email">Email address</label>
-    <input id="email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" maxlength="254" placeholder="Email address" aria-describedby="signup-description signup-privacy" required>
-    <button type="submit">Join the waitlist</button>
-    <p id="signup-privacy" class="form-note">Beta updates only. iOS 26+.</p>
-  </form>
-</main>
-<script type="module" src="/assets/particle-wordmark.mjs"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#000000">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="apple-itunes-app" content="app-id=1456159174">
+  <title>Reflex — Motion Art &amp; Sound</title>
+  <meta name="description" content="Move, and the world answers — in light and in sound. Reflex turns your camera into a living instrument, on iPhone and iPad.">
+  <link rel="canonical" href="https://rflx.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rflx.app/">
+  <meta property="og:title" content="Reflex — Motion Art & Sound">
+  <meta property="og:description" content="Move, and the world answers — in light and in sound.">
+  <meta property="og:image" content="https://rflx.app/assets/reflex-icon-512.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/assets/reflex-icon-180.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/reflex-icon-180.png">
+  <link rel="preload" href="/assets/fonts/SpaceGrotesk-Medium.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="/assets/home.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas class="silk" aria-hidden="true"></canvas>
+  <div class="page">
+    <header><a class="wordmark" href="/" aria-label="Reflex home">reflex</a></header>
+    <p class="hint" aria-hidden="true">Move</p>
+    <div class="bottom">
+      <main id="main">
+        <h1>Every motion paints. <span>Every motion plays.</span></h1>
+        <div class="get">
+          <a class="badge" href="https://apps.apple.com/app/reflex-motion-art-sound/id1456159174">
+            <img src="/assets/app-store-badge.svg" alt="Download on the App Store" width="144" height="48">
+          </a>
+          <img class="qr" src="/assets/app-store-qr.svg" alt="QR code that opens Reflex on the App Store" width="52" height="52">
+        </div>
+        <p class="meta">For iPhone and iPad · iOS 26 or later</p>
+      </main>
+      <footer>
+        <nav aria-label="Footer">
+          <a href="/privacypolicy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Use</a>
+          <a href="mailto:rflx.app@gmail.com">Contact</a>
+        </nav>
+      </footer>
+    </div>
+  </div>
+  <script type="module" src="/assets/silk.mjs"></script>
+</body>
+</html>

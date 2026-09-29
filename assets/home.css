@@ -1,0 +1,57 @@
+@font-face { font-family: Space Grotesk; src: url('/assets/fonts/SpaceGrotesk-Medium.otf') format('opentype'); font-weight: 500; font-display: swap; }
+:root { color-scheme: dark; --ink: #f4f2f7; --muted: rgba(244, 242, 247, .5); }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #000; }
+body {
+  color: var(--ink);
+  font: 400 15px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 4px; }
+
+/* The canvas sits behind the text and takes every touch that is not on a link, so dragging
+   anywhere draws instead of scrolling. */
+.silk { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.page {
+  position: relative; min-height: 100svh; pointer-events: none;
+  display: grid; grid-template-rows: auto 1fr auto;
+  padding: max(env(safe-area-inset-top), clamp(22px, 4vw, 44px)) max(env(safe-area-inset-right), clamp(22px, 4vw, 48px))
+           max(env(safe-area-inset-bottom), clamp(22px, 4vw, 44px)) max(env(safe-area-inset-left), clamp(22px, 4vw, 48px));
+}
+.page a { pointer-events: auto; }
+.wordmark, h1 { font-family: Space Grotesk, sans-serif; font-weight: 500; }
+.wordmark { font-size: 24px; letter-spacing: -.045em; line-height: 1; }
+.hint {
+  place-self: center; margin: 0;
+  font-size: 11px; letter-spacing: .42em; text-indent: .42em; text-transform: uppercase;
+  color: rgba(244, 242, 247, .42); transition: opacity 1.6s ease;
+}
+.moved .hint { opacity: 0; }
+.bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 28px 40px; flex-wrap: wrap; }
+h1 { margin: 0 0 26px; font-size: clamp(34px, min(6.4vw, 10svh), 88px); line-height: 1; letter-spacing: -.045em; }
+h1 span { display: block; color: rgba(244, 242, 247, .38); }
+.get { display: flex; align-items: center; gap: 14px; }
+.badge { display: block; line-height: 0; }
+.badge img { display: block; width: auto; height: 48px; }
+.qr { display: none; width: 52px; height: 52px; padding: 4px; background: #fff; border-radius: 6px; }
+.meta { margin: 14px 0 0; font-size: 12px; color: var(--muted); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 12px; color: var(--muted); }
+footer a:hover { color: var(--ink); }
+.skip-link { position: absolute; z-index: 1; top: -100px; left: 12px; padding: 10px; background: #000; }
+.skip-link:focus { top: 12px; }
+
+/* On a computer the QR code hands the download to a phone. */
+@media (hover: hover) and (pointer: fine) and (min-width: 900px) {
+  .qr { display: block; }
+}
+/* A phone on its side is too short for one screen: let it scroll vertically. */
+@media (max-height: 480px) {
+  .silk { touch-action: pan-y; }
+  .hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hint { display: none; }
+}
