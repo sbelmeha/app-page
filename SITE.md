@@ -13,6 +13,13 @@ Behind the text, threads of light follow the visitor's pointer or finger (`asset
 - `apple-itunes-app` shows Safari's Smart App Banner on iPhone and iPad.
 - The page names no price: Reflex is free to download with Reflex Pro purchases inside.
 
+## Jar
+
+`/jar/` is the TestFlight waitlist for Jar, a separate iPhone app: plain HTML (`jar/index.html`, `layout: null`) with `jar/jar.css` and `jar/jar.js`. Its three lines are the page of the app; tapping one drops its letters into a glass jar drawn on a canvas, and tapping the jar shakes a line back out.
+
+- Signups go to a private Google Sheet through a Google Apps Script web app (`scripts/jar-waitlist.gs`, deployed as Execute as: Me, Who has access: Anyone). Its URL is `ENDPOINT` in `jar/jar.js`. The script only appends rows, skips repeats and a filled `website` honeypot, and has no `doGet`, so the sheet can't be read through it. Redeploying the script as a new deployment changes the URL.
+- After a signup the address drops into the jar, and the browser remembers it in `localStorage` to show the confirmation again.
+
 ## Build and checks
 
 Build with the repository's GitHub Pages/Jekyll toolchain (`bundle install`, `bundle exec jekyll build`), then:

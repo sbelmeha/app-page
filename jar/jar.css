@@ -1,0 +1,66 @@
+/* Layout: one narrow column that is the app itself: page lines on top, the jar under them, the email field last. */
+:root {
+  --ground: #f3f6f4;
+  --ink: #1b2229;
+  --ink-soft: #7a8580;
+  --rule: #dde4e0;
+  --glass: #aebdb7;
+  --field: #ffffff;
+  --l-purple: #7a4e9e;
+  --l-blue: #2f5bd3;
+  --l-green: #2f6b4b;
+  --l-amber: #b8862b;
+  --l-red: #d9512c;
+  --err: #b2361a;
+  --f-body: "Nunito", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0f1214; --ink: #e9eeec; --ink-soft: #85908c; --rule: #262d30; --glass: #55645f; --field: #181d20;
+    --l-purple: #b58ae0; --l-blue: #7d9cff; --l-green: #6cc596; --l-amber: #e2b45a; --l-red: #f0805f; --err: #f0805f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0f1214; --ink: #e9eeec; --ink-soft: #85908c; --rule: #262d30; --glass: #55645f; --field: #181d20;
+  --l-purple: #b58ae0; --l-blue: #7d9cff; --l-green: #6cc596; --l-amber: #e2b45a; --l-red: #f0805f; --err: #f0805f;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { margin: 0; }
+body { background: var(--ground); color: var(--ink); font: 600 1rem/1.5 var(--f-body); padding-inline: 20px; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
+
+.stage { position: relative; width: min(440px, 100%); margin-inline: auto; padding-block: calc(28px + env(safe-area-inset-top, 0px)) calc(40px + env(safe-area-inset-bottom, 0px)); display: grid; }
+.stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+
+.brand { display: flex; align-items: center; gap: 10px; font: 800 1.05rem/1 var(--f-body); margin: 0 0 36px; }
+.brand img { width: 30px; height: 30px; border-radius: 22.37%; }
+.brand span { color: var(--ink-soft); font-weight: 700; font-size: .85rem; margin-left: auto; }
+
+.page { display: grid; min-height: calc(var(--row) * 4); align-content: start; --row: 44px; }
+.row { height: var(--row); padding: 0; border: 0; background: none; color: var(--ink); text-align: left; cursor: pointer; white-space: nowrap; font: 800 var(--fs) / var(--row) var(--f-body); --fs: clamp(19px, 5.6vw, 25px); letter-spacing: -.005em; }
+.row span { border-radius: 6px; transition: background-color .15s; }
+.row:hover span { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+.row.away { visibility: hidden; }
+
+.jarbox { position: relative; height: 340px; margin-top: 8px; }
+.jarbox button { position: absolute; inset: 30px 24px 0; border: 0; background: none; cursor: pointer; border-radius: 30px; }
+.caption { min-height: 1.5em; margin-top: 14px; text-align: center; font-size: .85rem; color: var(--ink-soft); }
+
+.join { margin-top: 36px; }
+.join form { display: flex; gap: 8px; }
+.join .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.join input { flex: 1; min-width: 0; border: 1px solid var(--rule); background: var(--field); color: var(--ink); font: 700 1rem var(--f-body); padding: 13px 16px; border-radius: 14px; }
+.join input::placeholder { color: var(--ink-soft); font-weight: 600; }
+.join input:focus { outline: none; border-color: var(--ink); }
+.join button:disabled { opacity: .6; cursor: progress; }
+.join button { border: 0; background: var(--ink); color: var(--ground); font: 800 1rem var(--f-body); padding: 13px 18px; border-radius: 14px; cursor: pointer; white-space: nowrap; }
+.join .note { margin-top: 12px; font-size: .85rem; color: var(--ink-soft); text-align: center; overflow-wrap: anywhere; }
+.join .note.err { color: var(--err); }
+.join .note b { color: var(--ink); }
+.join .again { border: 0; background: none; padding: 0; color: var(--ink-soft); font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.join.done form { display: none; }
+.join.done .note { margin-top: 0; font-size: .95rem; }

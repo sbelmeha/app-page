@@ -90,6 +90,7 @@ exclude:
   - README.md
   - SITE.md
   - tests
+  - scripts
   - CNAME
 
 collections:

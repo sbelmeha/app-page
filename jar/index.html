@@ -1,0 +1,57 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f3f6f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1214" media="(prefers-color-scheme: dark)">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Jar for iPhone — TestFlight beta</title>
+  <meta name="description" content="Jar is a one-note iPhone app. Tap a line and its letters fall into a glass jar. Join the TestFlight beta.">
+  <link rel="canonical" href="https://rflx.app/jar/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rflx.app/jar/">
+  <meta property="og:title" content="Jar for iPhone">
+  <meta property="og:description" content="A note you drop into a jar. Join the TestFlight beta.">
+  <meta property="og:image" content="https://rflx.app/jar/icon-512.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/jar/icon-180.png" type="image/png">
+  <link rel="apple-touch-icon" href="/jar/icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/jar/jar.css">
+  <script src="/jar/jar.js" defer></script>
+</head>
+<body>
+<main class="stage" id="main">
+  <canvas id="jar" aria-hidden="true"></canvas>
+
+  <header>
+    <h1 class="brand"><img src="/jar/icon-180.png" alt="" width="30" height="30">Jar <span>for iPhone</span></h1>
+  </header>
+
+  <div class="page" id="page" aria-label="The page. Tap a line to drop it into the jar."></div>
+
+  <div class="jarbox" id="jarbox">
+    <button type="button" id="shake" aria-label="Shake the jar to bring a line back out"></button>
+  </div>
+  <p class="caption" id="caption" aria-live="polite">Tap a line</p>
+
+  <div class="join" id="join">
+    <form id="form" novalidate>
+      <label class="sr" for="email">Email address</label>
+      <input id="email" type="email" name="email" placeholder="Your email" autocomplete="email" inputmode="email" maxlength="254">
+      <label class="sr" for="website" aria-hidden="true">Leave this empty</label>
+      <input class="sr" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" id="submit">Get an invite</button>
+    </form>
+    <p class="note" id="note" aria-live="polite">TestFlight beta · iOS 26 · We'll only email you the invite</p>
+  </div>
+</main>
+</body>
+</html>

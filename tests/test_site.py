@@ -73,6 +73,18 @@ class PublishedSiteTests(unittest.TestCase):
                 if link.get('rel') == 'stylesheet':
                     self.assertTrue((OUTPUT / link['href'].lstrip('/')).is_file())
 
+    def test_jar_waitlist_posts_to_the_sheet(self):
+        page = Page(OUTPUT / 'jar' / 'index.html')
+        self.assertEqual(len(page.tags('h1')), 1)
+        self.assertEqual(page.tags('html')[0]['lang'], 'en')
+        self.assertEqual(page.tags('main')[0]['id'], 'main')
+        email, = [i for i in page.tags('input') if i.get('type') == 'email']
+        self.assertEqual(email['autocomplete'], 'email')
+        for asset in [s['src'] for s in page.tags('script')] + [l['href'] for l in page.tags('link') if l['href'].startswith('/')] + [i['src'] for i in page.tags('img')]:
+            self.assertTrue((OUTPUT / asset.lstrip('/')).is_file(), asset)
+        script = (OUTPUT / 'jar' / 'jar.js').read_text()
+        self.assertRegex(script, r'const ENDPOINT = "https://script\.google\.com/macros/s/[\w-]+/exec";')
+
 
 if __name__ == '__main__':
     unittest.main()
