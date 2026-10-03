@@ -1,3 +1,4 @@
+/** @OnlyCurrentDoc */
 /**
  * Jar waitlist: appends each signup from rflx.app/jar/ to the sheet this script is bound to.
  *
