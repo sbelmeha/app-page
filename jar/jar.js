@@ -7,7 +7,7 @@
   const caption = document.getElementById("caption");
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const PAGE = ["Write a line.", "Tap it, and it falls in.", "Shake to get one back."];
+  const PAGE = ["A note you drop into a jar.", "Tap a line, and it falls in.", "Shake, and one comes back."];
   const SEEDED = ["plum jam on Sunday", "Mila said again!", "call grandma back", "the good bakery", "tram 18, window seat", "breathe out slower"];
   const MAX_ROWS = 4, G = 0.32;
   const PALETTE = ["--l-blue", "--l-amber", "--l-green", "--l-purple", "--l-red"];
