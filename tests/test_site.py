@@ -1,6 +1,7 @@
 """Check the generated GitHub Pages output: python3 tests/test_site.py [_site]."""
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 import sys
 import unittest
 from urllib.parse import urlparse
@@ -81,8 +82,11 @@ class PublishedSiteTests(unittest.TestCase):
         email, = [i for i in page.tags('input') if i.get('type') == 'email']
         self.assertEqual(email['autocomplete'], 'email')
         for asset in [s['src'] for s in page.tags('script')] + [l['href'] for l in page.tags('link') if l['href'].startswith('/')] + [i['src'] for i in page.tags('img')]:
-            self.assertTrue((OUTPUT / asset.lstrip('/')).is_file(), asset)
+            self.assertTrue((OUTPUT / urlparse(asset).path.lstrip('/')).is_file(), asset)
         script = (OUTPUT / 'jar' / 'jar.js').read_text()
+        ids = {attrs['id'] for _, attrs in page.elements if 'id' in attrs}
+        for wanted in re.findall(r'getElementById\("([\w-]+)"\)', script):
+            self.assertIn(wanted, ids)
         self.assertRegex(script, r'const ENDPOINT = "https://script\.google\.com/macros/s/[\w-]+/exec";')
 
 

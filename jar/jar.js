@@ -1,5 +1,5 @@
 (() => {
-  const stage = document.getElementById("stage");
+  const stage = document.getElementById("main");
   const canvas = document.getElementById("jar");
   const ctx = canvas.getContext("2d");
   const page = document.getElementById("page");
