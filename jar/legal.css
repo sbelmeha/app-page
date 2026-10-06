@@ -1,0 +1,43 @@
+/* The Jar privacy policy and terms: the waitlist's colors and type in a readable column. */
+:root {
+  --ground: #f3f6f4;
+  --ink: #1b2229;
+  --ink-soft: #66716c;
+  --rule: #dde4e0;
+  --link: #2f5bd3;
+  --f-body: "Nunito", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0f1214; --ink: #e9eeec; --ink-soft: #95a09c; --rule: #262d30; --link: #7d9cff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0f1214; --ink: #e9eeec; --ink-soft: #95a09c; --rule: #262d30; --link: #7d9cff;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 600 1rem/1.6 var(--f-body); padding-inline: 20px; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
+
+.legal { width: min(680px, 100%); margin-inline: auto; padding-block: calc(28px + env(safe-area-inset-top, 0px)) calc(40px + env(safe-area-inset-bottom, 0px)); }
+
+.brand { display: flex; align-items: center; gap: 10px; font: 800 1.05rem/1 var(--f-body); color: var(--ink); text-decoration: none; margin-bottom: 40px; }
+.brand img { width: 30px; height: 30px; border-radius: 22.37%; }
+.brand span { color: var(--ink-soft); font-weight: 700; font-size: .85rem; margin-left: auto; }
+
+h1 { font: 800 clamp(1.9rem, 7vw, 2.5rem)/1.1 var(--f-body); letter-spacing: -.01em; margin: 0; }
+.updated { color: var(--ink-soft); font-size: .9rem; margin: 10px 0 28px; }
+
+article h2 { font: 800 1.25rem/1.25 var(--f-body); margin: 36px 0 8px; }
+article p, article li { overflow-wrap: anywhere; }
+article ul { padding-left: 1.2em; }
+article li + li { margin-top: 6px; }
+article strong { font-weight: 800; }
+a { color: var(--link); text-underline-offset: 3px; }
+
+footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--rule); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: .9rem; }
+footer a { color: var(--ink-soft); }

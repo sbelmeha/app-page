@@ -88,6 +88,32 @@ class PublishedSiteTests(unittest.TestCase):
         for wanted in re.findall(r'getElementById\("([\w-]+)"\)', script):
             self.assertIn(wanted, ids)
         self.assertRegex(script, r'const ENDPOINT = "https://script\.google\.com/macros/s/[\w-]+/exec";')
+        hrefs = [a.get('href') for a in page.tags('a')]
+        self.assertIn('/jar/privacy/', hrefs)
+        self.assertIn('/jar/terms/', hrefs)
+
+    def test_jar_legal_pages_stand_on_their_own(self):
+        for route in ['jar/privacy', 'jar/terms']:
+            path = OUTPUT / route / 'index.html'
+            text = path.read_text()
+            self.assertRegex(text, r'Last updated [A-Z][a-z]+ \d{1,2}, \d{4}<', route)
+            self.assertNotIn('Reflex', text, route)
+            page = Page(path)
+            self.assertEqual(len(page.tags('h1')), 1, route)
+            self.assertEqual(page.tags('html')[0]['lang'], 'en')
+            self.assertEqual(page.tags('main')[0]['id'], 'main')
+            for image in page.tags('img'):
+                self.assertTrue(image.get('alt'), image['src'])
+                self.assertTrue((OUTPUT / image['src'].lstrip('/')).is_file(), image['src'])
+            for link in page.tags('link'):
+                if link.get('rel') == 'stylesheet' and link['href'].startswith('/'):
+                    self.assertTrue((OUTPUT / link['href'].lstrip('/')).is_file(), link['href'])
+            for anchor in page.tags('a'):
+                href = anchor.get('href', '')
+                if not href.startswith('/') or href.startswith('//'):
+                    continue
+                target = OUTPUT / urlparse(href).path.lstrip('/')
+                self.assertTrue(target.is_file() or (target / 'index.html').is_file(), href)
 
 
 if __name__ == '__main__':

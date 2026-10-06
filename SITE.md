@@ -1,6 +1,6 @@
 # rflx.app
 
-GitHub Pages serves the Reflex home page and the `/privacypolicy/` and `/terms/` URLs the app and its App Store listing link to. The previous shared Reflex/Perfect Loop Maker policy is preserved at `/legacy-privacy/` and the old terms at `/legacy-terms/`; other apps on this domain keep their own pages.
+GitHub Pages serves the Reflex home page and the `/privacypolicy/` and `/terms/` URLs the app and its App Store listing link to. The previous shared Reflex/Perfect Loop Maker policy is preserved at `/legacy-privacy/` and the old terms at `/legacy-terms/`; other apps on this domain keep their own pages, Jar's under `/jar/`.
 
 ## Home page
 
@@ -19,6 +19,7 @@ Behind the text, threads of light follow the visitor's pointer or finger (`asset
 
 - Signups go to a private Google Sheet through a Google Apps Script web app (`scripts/jar-waitlist.gs`, deployed as Execute as: Me, Who has access: Anyone). Its URL is `ENDPOINT` in `jar/jar.js`. The script only appends rows, skips repeats and a filled `website` honeypot, and has no `doGet`, so the sheet can't be read through it. Redeploying the script as a new deployment changes the URL.
 - After a signup the address drops into the jar, and the browser remembers it in `localStorage` to show the confirmation again.
+- Jar's own Privacy Policy and Terms of Use, which the app and its App Store listing link to, are `/jar/privacy/` and `/jar/terms/` (`_pages/jar_privacy.md`, `_pages/jar_terms.md`, layout `jar-legal` with `jar/legal.css`). The waitlist links to both. Keep the policy in step with the app's `PrivacyInfo.xcprivacy` and its Firebase events, and update it when the waitlist, gifts, or Google Fonts change what leaves a device.
 
 ## Build and checks
 
