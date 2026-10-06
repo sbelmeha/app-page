@@ -63,10 +63,6 @@ Firebase, Google, GitHub, and Apple apply their own retention rules. Deleting Ja
 
 You can skip or turn off permissions in iOS Settings, delete lines and jars in the app, take back a gift that hasn't been opened, or delete the app. Email [rflx.app@gmail.com](mailto:rflx.app@gmail.com) to ask about access to, correction of, or deletion of information we hold. Depending on where you live, you may also have rights to object to or restrict processing, receive a copy of your data, or complain to a data protection authority. Because Jar has no accounts, we cannot find usage statistics or crash reports from an email address alone.
 
-## Children
-
-Jar is not directed to children under 13. If you believe a child has sent us personal information, contact us and we will delete it.
-
 ## Changes
 
 We will update the date on this page when this policy changes, and give additional notice or ask for consent where the law requires it.
