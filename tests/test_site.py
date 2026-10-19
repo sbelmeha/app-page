@@ -74,8 +74,8 @@ class PublishedSiteTests(unittest.TestCase):
                 if link.get('rel') == 'stylesheet':
                     self.assertTrue((OUTPUT / link['href'].lstrip('/')).is_file())
 
-    def test_jar_waitlist_posts_to_the_sheet(self):
-        page = Page(OUTPUT / 'jar' / 'index.html')
+    def test_r1_wishlist_posts_to_the_sheet(self):
+        page = Page(OUTPUT / 'r1' / 'index.html')
         self.assertEqual(len(page.tags('h1')), 1)
         self.assertEqual(page.tags('html')[0]['lang'], 'en')
         self.assertEqual(page.tags('main')[0]['id'], 'main')
@@ -83,14 +83,20 @@ class PublishedSiteTests(unittest.TestCase):
         self.assertEqual(email['autocomplete'], 'email')
         for asset in [s['src'] for s in page.tags('script')] + [l['href'] for l in page.tags('link') if l['href'].startswith('/')] + [i['src'] for i in page.tags('img')]:
             self.assertTrue((OUTPUT / urlparse(asset).path.lstrip('/')).is_file(), asset)
-        script = (OUTPUT / 'jar' / 'jar.js').read_text()
+        for image in page.tags('img'):
+            self.assertIn('alt', image, image['src'])
+        script = (OUTPUT / 'r1' / 'r1.js').read_text()
         ids = {attrs['id'] for _, attrs in page.elements if 'id' in attrs}
         for wanted in re.findall(r'getElementById\("([\w-]+)"\)', script):
             self.assertIn(wanted, ids)
         self.assertRegex(script, r'const ENDPOINT = "https://script\.google\.com/macros/s/[\w-]+/exec";')
-        hrefs = [a.get('href') for a in page.tags('a')]
-        self.assertIn('/jar/privacy/', hrefs)
-        self.assertIn('/jar/terms/', hrefs)
+        self.assertIn('app: "r1"', script)
+
+    def test_old_jar_address_leads_to_r1(self):
+        page = Page(OUTPUT / 'jar' / 'index.html')
+        refresh, = [m for m in page.tags('meta') if m.get('http-equiv') == 'refresh']
+        self.assertTrue(refresh['content'].endswith('url=/r1/'))
+        self.assertIn('/r1/', [a.get('href') for a in page.tags('a')])
 
     def test_jar_legal_pages_stand_on_their_own(self):
         for route in ['jar/privacy', 'jar/terms']:

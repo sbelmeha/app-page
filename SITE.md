@@ -1,6 +1,6 @@
 # rflx.app
 
-GitHub Pages serves the Reflex home page and the `/privacypolicy/` and `/terms/` URLs the app and its App Store listing link to. The previous shared Reflex/Perfect Loop Maker policy is preserved at `/legacy-privacy/` and the old terms at `/legacy-terms/`; other apps on this domain keep their own pages, Jar's under `/jar/`.
+GitHub Pages serves the Reflex home page and the `/privacypolicy/` and `/terms/` URLs the app and its App Store listing link to. The previous shared Reflex/Perfect Loop Maker policy is preserved at `/legacy-privacy/` and the old terms at `/legacy-terms/`; other apps on this domain keep their own pages: Resonance R-1's wishlist under `/r1/`, Jar's legal pages under `/jar/`.
 
 ## Home page
 
@@ -13,13 +13,21 @@ Behind the text, threads of light follow the visitor's pointer or finger (`asset
 - `apple-itunes-app` shows Safari's Smart App Banner on iPhone and iPad.
 - The page names no price: Reflex is free to download with Reflex Pro purchases inside.
 
+## Resonance R-1
+
+`/r1/` is the wishlist for Resonance R-1, an iPhone instrument. It took over from Jar's TestFlight waitlist, and `/jar/` now only redirects to it (`jar/index.html`, a meta refresh, as GitHub Pages has no server redirects). Plain HTML (`r1/index.html`, `layout: null`) with `r1/r1.css` and `r1/r1.js`, black, one column: a render of the R-1 lying face down in the dark with its glow spilling out from under it (`r1/r1-lights-out.jpg`, made by `Design/R1/site/teaser_r1.py` in the ResonanceR1 repository), the line "Something to fall asleep to.", and the email field. The page must never show the R-1's face: any new image comes from that script and is checked for the face, controls, card slot and wordmark first.
+
+- The glow breathes (a slow brightness cycle on the image), and stands still with reduced motion.
+- Signups go to the private Google Sheet below, tagged `app: "r1"`. The browser remembers the address in `localStorage` to show the confirmation again.
+- The page names no policy page: a line under the form says what the address is used for and how to be taken off the list.
+
 ## Jar
 
-`/jar/` is the TestFlight waitlist for Jar, a separate iPhone app: plain HTML (`jar/index.html`, `layout: null`) with `jar/jar.css` and `jar/jar.js`. Its three lines are the page of the app; tapping one drops its letters into a glass jar drawn on a canvas, and tapping the jar shakes a line back out.
+Jar, a separate iPhone app, no longer has a page of its own; its Privacy Policy and Terms of Use, which the app and its App Store listing link to, stay at `/jar/privacy/` and `/jar/terms/` (`_pages/jar_privacy.md`, `_pages/jar_terms.md`, layout `jar-legal` with `jar/legal.css`, and Jar's icon `jar/icon-180.png`). Keep the policy in step with the app's `PrivacyInfo.xcprivacy` and its Firebase events, and update it when gifts or Google Fonts change what leaves a device.
 
-- Signups go to a private Google Sheet through a Google Apps Script web app (`scripts/jar-waitlist.gs`, deployed as Execute as: Me, Who has access: Anyone). Its URL is `ENDPOINT` in `jar/jar.js`. The script only appends rows, skips repeats and a filled `website` honeypot, and has no `doGet`, so the sheet can't be read through it. Redeploying the script as a new deployment changes the URL.
-- After a signup the address drops into the jar, and the browser remembers it in `localStorage` to show the confirmation again.
-- Jar's own Privacy Policy and Terms of Use, which the app and its App Store listing link to, are `/jar/privacy/` and `/jar/terms/` (`_pages/jar_privacy.md`, `_pages/jar_terms.md`, layout `jar-legal` with `jar/legal.css`). The waitlist links to both. Keep the policy in step with the app's `PrivacyInfo.xcprivacy` and its Firebase events, and update it when the waitlist, gifts, or Google Fonts change what leaves a device.
+## Waitlist sheet
+
+Signups from `/r1/` (and before it Jar's `/jar/`) go to a private Google Sheet through a Google Apps Script web app (`scripts/jar-waitlist.gs`, deployed as Execute as: Me, Who has access: Anyone). Its URL is `ENDPOINT` in `r1/r1.js`. The script only appends rows (email, date, app), skips an address already on the list for the same app and a filled `website` honeypot, and has no `doGet`, so the sheet can't be read through it. Update it under Deploy > Manage deployments > Edit > New version, which keeps the URL; a new deployment changes it.
 
 ## Build and checks
 
