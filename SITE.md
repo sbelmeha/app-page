@@ -15,9 +15,9 @@ Behind the text, threads of light follow the visitor's pointer or finger (`asset
 
 ## Resonance R-1
 
-`/r1/` is the wishlist for Resonance R-1, an iPhone instrument. It took over from Jar's TestFlight waitlist, and `/jar/` now only redirects to it (`jar/index.html`, a meta refresh, as GitHub Pages has no server redirects). Plain HTML (`r1/index.html`, `layout: null`) with `r1/r1.css` and `r1/r1.js`, black, one column: a render of the R-1 lying face down in the dark with its glow spilling out from under it (`r1/r1-lights-out.jpg`, made by `Design/R1/site/teaser_r1.py` in the ResonanceR1 repository), the line "Something to fall asleep to.", and the email field. The page must never show the R-1's face: any new image comes from that script and is checked for the face, controls, card slot and wordmark first.
+`/r1/` is the beta list for Resonance R-1, an iPhone instrument: visitors leave the email of their Apple ID so they can be invited to TestFlight. It took over from Jar's TestFlight waitlist, and `/jar/` now only redirects to it (`jar/index.html`, a meta refresh, as GitHub Pages has no server redirects). Plain HTML (`r1/index.html`, `layout: null`) with `r1/r1.css` and `r1/r1.js`: one screen on black with no scrolling, the lit R-1 face on (`r1/r1-lit.jpg`), the line "Something to fall asleep to.", and the email field, centred. The R-1 is shown since 2026-10-21; the image is a composite of the current Blender reference render with a sand window, made in `Design/R1/site/` in the ResonanceR1 repository.
 
-- The glow breathes (a slow brightness cycle on the image), and stands still with reduced motion.
+- The R-1 fades up from dark once on load, and simply shows with reduced motion.
 - Signups go to the private Google Sheet below, tagged `app: "r1"`. The browser remembers the address in `localStorage` to show the confirmation again.
 - The page names no policy page: a line under the form says what the address is used for and how to be taken off the list.
 

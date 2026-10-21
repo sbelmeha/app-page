@@ -9,13 +9,13 @@ layout: null
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#000000">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Resonance R-1 for iPhone — Wishlist</title>
-  <meta name="description" content="Resonance R-1 is an iPhone instrument made of sand, and something to fall asleep to. Join the wishlist to hear when it's out.">
+  <title>Resonance R-1 for iPhone — Beta</title>
+  <meta name="description" content="Resonance R-1 is an iPhone instrument made of sand, and something to fall asleep to. Leave your Apple ID email to get a TestFlight invite.">
   <link rel="canonical" href="https://rflx.app/r1/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rflx.app/r1/">
   <meta property="og:title" content="Resonance R-1 for iPhone">
-  <meta property="og:description" content="Something to fall asleep to. Join the wishlist.">
+  <meta property="og:description" content="Something to fall asleep to. Join the beta.">
   <meta property="og:image" content="https://rflx.app/r1/r1-og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -26,36 +26,34 @@ layout: null
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap">
-  <link rel="stylesheet" href="/r1/r1.css?v=1">
-  <script src="/r1/r1.js?v=1" defer></script>
+  <link rel="stylesheet" href="/r1/r1.css?v=2">
+  <script src="/r1/r1.js?v=2" defer></script>
 </head>
 <body>
 <main class="stage" id="main">
-  <header>
-    <h1 class="brand"><img src="/r1/r1-icon.svg" alt="" width="30" height="30">Resonance R-1 <span>for iPhone</span></h1>
-  </header>
+  <h1 class="brand"><img src="/r1/r1-icon.svg" alt="" width="28" height="28">Resonance R-1 <span>for iPhone</span></h1>
 
-  <img class="hero" src="/r1/r1-lights-out.jpg" alt="A dark object resting in the dark, warm light spilling out from underneath" width="880" height="1100">
+  <div class="hero"><img src="/r1/r1-lit.jpg" alt="The R-1 in ivory, sand drawn into a figure in its window" width="594" height="920"></div>
 
   <h2 class="lead">Something to fall asleep to.</h2>
-  <p class="more">It plays on its own for half an hour, changing its mind now and then. Then it fades out, and goes dark with you.</p>
+  <p class="more">An instrument made of sand, for iPhone.</p>
 
   <div class="join" id="join">
     <form id="form" novalidate>
-      <label class="sr" for="email">Email address</label>
-      <input id="email" type="email" name="email" placeholder="Your email" autocomplete="email" inputmode="email" maxlength="254">
+      <label class="sr" for="email">Apple ID email</label>
+      <input id="email" type="email" name="email" placeholder="Your Apple ID email" autocomplete="email" inputmode="email" maxlength="254">
       <label class="sr" for="website" aria-hidden="true">Leave this empty</label>
       <input class="sr" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button type="submit" id="submit">Join the wishlist</button>
+      <button type="submit" id="submit">Join the beta</button>
     </form>
-    <p class="note" id="note" aria-live="polite">One email when it's out. No newsletter.</p>
+    <p class="note" id="note" aria-live="polite">Use the email of your Apple ID. Your TestFlight invite goes there.</p>
     <div class="done" id="done" hidden>
-      <p class="title">You're on the list. Sleep well.</p>
-      <p class="sub">We'll write to <b id="who"></b> once, when the lights come on. <button type="button" class="again" id="again">Change</button></p>
+      <p class="title">You're in.</p>
+      <p class="sub">Your TestFlight invite will go to <b id="who"></b>. <button type="button" class="again" id="again">Change</button></p>
     </div>
   </div>
 
-  <p class="fine">We keep your address on a private list and use it only to tell you about R-1. To be taken off it, email <a href="mailto:rflx.app@gmail.com">rflx.app@gmail.com</a>.</p>
+  <p class="fine">Private list, used only for R-1. To leave it, email <a href="mailto:rflx.app@gmail.com">rflx.app@gmail.com</a>.</p>
 </main>
 </body>
 </html>

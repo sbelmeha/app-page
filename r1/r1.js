@@ -1,4 +1,4 @@
-/* The R-1 wishlist: one email field. Signups go to the same private sheet as Jar's waitlist, tagged app "r1". */
+/* The R-1 beta list: one Apple ID email field, for the TestFlight invite. Signups go to the same private sheet as Jar's waitlist, tagged app "r1". */
 (() => {
   "use strict";
 
@@ -36,7 +36,7 @@
     if (submit.disabled) return;
     const email = input.value.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-      note.textContent = email ? "Check the address. It should look like name@example.com" : "Enter your email to join the wishlist";
+      note.textContent = email ? "Check the address. It should look like name@example.com" : "Enter your Apple ID email to join the beta";
       note.classList.add("err"); input.focus(); return;
     }
     submit.disabled = true; note.classList.remove("err"); note.textContent = "Adding you to the list…";
